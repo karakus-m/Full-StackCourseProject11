@@ -1,0 +1,94 @@
+.tracklistTrack{
+    display: grid;
+    grid-template-rows: repeat(3, auto);
+    grid-template-columns: 1fr auto;
+    grid-template-areas: 'SongName Button'
+                         'Artist Button'
+                         'Album Button';
+    row-gap: 3px;
+    column-gap: 3px;
+    padding: var(--contents-griditem-subitems-padding);
+    background-image: var(--contents-griditem-subitems-background-image);
+    border: none;
+    color: var(--contents-griditem-subitems-color);
+    border-radius: var(--contents-griditem-subitems-border-radius);
+}
+
+.songName {
+    grid-area: SongName;
+    text-align: left;
+}
+
+.artist {
+    grid-area: Artist;
+    text-align: left;
+    font-size: 0.9rem;
+}
+
+.album {
+    grid-area: Album;
+    text-align: left;
+    font-size: 0.9rem;
+}
+
+.button {
+    grid-area: Button;
+    align-self: center;
+    padding: 0.3rem;
+    background-color: transparent;
+    background-image: url(../../../../assets/images/icons/tracklistRemoveIcon/playlist_remove_24dp_E3E3E3_FILL0_wght400_GRAD0_opsz24.png);
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 2rem;
+    height: 2rem;
+    border-radius: var(--contents-griditem-subitems-border-radius);
+
+}
+
+.songName::before {
+    content:'';
+    display: inline-block;
+    width: 1rem;
+    height: 1rem;
+    background-image: url(../../../../assets/images/icons/musicIcon/music_note_24dp_E3E3E3_FILL0_wght400_GRAD0_opsz24.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    margin-right: 10px;
+    vertical-align: middle;
+}
+
+.artist::before {
+    content:'';
+    display: inline-block;
+    width: 1rem;
+    height: 1rem;
+    background-image: url(../../../../assets/images/icons/artistIcon/artist_24dp_E3E3E3_FILL0_wght400_GRAD0_opsz24.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    margin-right: 10px;
+    vertical-align: middle;
+}
+
+
+.album::before {
+    content:'';
+    display: inline-block;
+    width: 1rem;
+    height: 1rem;
+    background-image: url(../../../../assets/images/icons/albumIcon/album_24dp_E3E3E3_FILL0_wght400_GRAD0_opsz24.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    margin-right: 10px;
+    vertical-align:middle;
+}
+
+.button:hover{
+    cursor: pointer;
+    background-color: rgba(0, 0, 0, 0.3);
+    filter: brightness(1.5);
+}
+
+.button:active{
+    filter: brightness(0.80);
+}

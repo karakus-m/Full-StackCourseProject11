@@ -1,0 +1,44 @@
+.searchBox {
+    grid-area: SearchBox;
+    display: grid;
+    grid-template-rows: 1fr;
+    grid-template-columns: 1fr auto;
+    column-gap: 10px;
+    grid-template-areas: 'SearchInput SearchButton';
+    margin: 10px 0px 0px 10px;
+}
+
+.searchInput {
+    grid-area: SearchInput;
+    padding: var(--contents-griditem-subitems-padding);
+    background-image: var(--contents-griditem-subitems-background-image);
+    border: none;
+    color: var(--contents-griditem-subitems-color);
+    border-radius: var(--contents-griditem-subitems-border-radius);
+    
+}
+
+.searchButton {
+    grid-area: SearchButton;
+    padding: var(--contents-griditem-subitems-padding);
+    background-image: url(../../../assets/images/icons/searchIcon/search_24dp_FFFFFF_FILL0_wght400_GRAD0_opsz24.png), var(--contents-griditem-subitems-background-image);
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 60px;
+    border: none;
+    color: var(--contents-griditem-subitems-color);
+    border-radius: var(--contents-griditem-subitems-border-radius);
+}
+
+.searchButton:hover, .searchInput:hover {
+    cursor: pointer;
+    background-color: rgba(0,0,0,0.2);
+    filter: brightness(1.5);
+}
+
+.searchButton:active, .searchInput:active {
+    filter: brightness(0.80);
+}
+
+

@@ -1,0 +1,42 @@
+.modifyTracklist {
+    grid-area: ModifyTracklist;
+    display: grid;
+    grid-template-rows: auto ;
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas: 'CancelButton SaveButton';
+    column-gap: 3px;
+}
+
+.button {
+    padding: 0.3rem;
+    justify-self: center;
+    background-color: transparent;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 2rem;
+    height: 2rem;
+    border-radius: var(--contents-griditem-subitems-border-radius);
+}
+
+.cancelButton {
+    grid-area: CancelButton;
+    background-image: url(../../../../assets/images/icons/cancelIcon/close_24dp_E3E3E3_FILL0_wght400_GRAD0_opsz24.png);
+}
+
+.saveButton {
+    grid-area: SaveButton;
+    background-image: url(../../../../assets/images/icons/saveIcon/check_24dp_E3E3E3_FILL0_wght400_GRAD0_opsz24.png);
+}
+
+
+
+.button:hover {
+    cursor: pointer;
+    background-color: rgba(255,255,255,0.3);
+    filter: brightness(1.5);
+}
+
+.button:active {
+    filter: brightness(0.80);
+}

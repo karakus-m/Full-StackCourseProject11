@@ -1,0 +1,36 @@
+.playlists {
+    grid-area: Playlists;
+    min-height: 100%;
+    max-height: 100%;
+    align-self: start;
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+    grid-template-columns: 1fr;
+    row-gap: 10px;
+    grid-template-areas: 'Title'
+                         'MainPlaylists'
+                         'CreatePlaylist';
+    background-image: var(--contents-griditem-background-image);
+    padding: var(--contents-griditem-padding);
+    border-radius: var(--contents-griditem-border-radius);
+}
+
+.title {
+    grid-area: Title;
+    text-align: center;
+}
+
+.mainPlaylists {
+    grid-area: MainPlaylists;
+    text-align: center;
+    overflow-y: auto;
+    min-height: 0;
+    display: grid;
+    align-content: start;
+    grid-auto-rows: auto;
+    grid-auto-columns: 1fr;
+    grid-auto-flow: row;
+    row-gap: 10px;
+    padding: 5px;
+}
+

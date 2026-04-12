@@ -1,0 +1,61 @@
+.createPlaylistSection {
+    grid-area: CreatePlaylist;
+}
+
+.button {
+    padding: 0.3rem;
+    justify-self: center;
+    background-color: transparent;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    border-radius: var(--contents-griditem-subitems-border-radius);
+}
+
+.playlistCreateButton {
+    width: 2rem;
+    height: 2rem;
+    background-image: url(../../../../assets/images/icons/addNewPlaylistIcon/add_box_24dp_E3E3E3_FILL0_wght400_GRAD0_opsz24.png);
+}
+
+.inputSection {
+    display: grid;
+    grid-template-rows: auto ;
+    grid-template-columns: auto 1fr 1fr;
+    grid-template-areas: 'PlaylistNameInput CancelButton SaveButton';
+    column-gap: 3px;
+}
+
+.playlistNameInput {
+    grid-area: PlaylistNameInput;
+    width: 155px;
+    padding: var(--contents-griditem-subitems-padding);
+    background-color: rgba(255, 255, 255, 0.5);
+    border: none;
+    color: white;
+    border-radius: var(--contents-griditem-subitems-border-radius);
+}
+
+.cancelButton {
+    grid-area: CancelButton;
+    width: 2rem;
+    height: 2rem;
+    background-image: url(../../../../assets/images/icons/cancelIcon/close_24dp_E3E3E3_FILL0_wght400_GRAD0_opsz24.png);
+}
+
+.saveButton {
+    width: 2rem;
+    height: 2rem;
+    grid-area: SaveButton;
+    background-image: url(../../../../assets/images/icons/saveIcon/check_24dp_E3E3E3_FILL0_wght400_GRAD0_opsz24.png);
+}
+
+.button:hover, .playlistNameInput:hover {
+    cursor: pointer;
+    background-color: rgba(255,255,255,0.3);
+    filter: brightness(1.5);
+}
+
+.button:active, .playlistNameInput:active {
+    filter: brightness(0.8);
+}

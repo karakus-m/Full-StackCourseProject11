@@ -1,0 +1,39 @@
+.content {
+    grid-area: Content;
+    min-height: 100%;
+    display: grid;
+    grid-template-rows: 1fr;
+    grid-template-columns: 1fr 1fr 1fr;
+    column-gap: 25px;
+    grid-template-areas: 'Search Playlists Tracklist';
+    --contents-griditem-padding: 15px 15px;
+    --contents-griditem-border-radius: 25px;
+    --contents-griditem-background-image: linear-gradient(to bottom, rgba(12, 12, 12, 0.5), rgba(53, 53, 53, 0.5));
+    --contents-griditem-subitems-background-image: radial-gradient(rgba(0, 231, 0, 0.8),rgba(14, 61, 14, 0.8));
+    --contents-griditem-subitems-color: white;
+    --contents-griditem-subitems-border-radius: 10px;
+    --contents-griditem-subitems-padding: 5px;
+}
+
+.search {
+    grid-area: Search;
+    min-height: 100%;
+    /*The 2 lines below are related and required for align-self: start to work properly. Normally align-self: strech assigns the grid items height to 100% of its parent. However, when align-self: start is used height for that grid item becomes height: auto. Hence when the element gets bigger than its container, it forces it to show all the elements meaining it takes the height of all the all the elements included even though there is scroll option inside somewhere. Hence by using max-height: 100% you fix the max height of that element in which align-self:start used. This assigns the max-height as 100% of the height of its parent. When the parent height gets fixed, that elements max height gets fixed. Problem is solved.
+    
+    In addition, similar situation appears for grid elements when min-height=0 is not used. Normally grid containers take min-height: auto as default. Because of this, in cases where you don't define a spesific height, and content defines the heigh, even if you use max-height: something, because min-height: auto exists, height: auto determines the height of the element as min-height of the element even when it passes max-height. To prevent this conflict, and to be able to create scrollable elements, you require to change this min-height to 0 in each parent container.*/
+    max-height: 100%;
+    align-self: start;
+    display: grid;
+    grid-template-rows: auto 1fr;
+    grid-template-columns: 1fr;
+    row-gap: 25px;
+    grid-template-areas: 'SearchBox'
+                         'SearchResults';
+    background-image: var(--contents-griditem-background-image);
+    padding: var(--contents-griditem-padding);
+    border-radius: var(--contents-griditem-border-radius);
+}
+
+.content {
+    transition: all 2s ease;
+}

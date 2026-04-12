@@ -1,0 +1,92 @@
+.playlist {
+    display: grid;
+    grid-template-rows: auto;
+    grid-template-columns: 1fr auto;
+    grid-template-areas: 'PlaylistName RenameSection';
+    column-gap: 3px;
+    padding: var(--contents-griditem-subitems-padding);
+    background-image: var(--contents-griditem-subitems-background-image);
+    border: none;
+    color: var(--contents-griditem-subitems-color);
+    border-radius: var(--contents-griditem-subitems-border-radius);
+}
+
+
+.playlistName {
+    grid-area: PlaylistName;
+    text-align: left;
+    border-radius: var(--contents-griditem-subitems-border-radius);
+}
+
+.playlistName::before {
+    content: '';
+    display: inline-block;
+    width: 1rem;
+    height: 1rem;
+    background-image: url(../../../../assets/images/icons/playlistIcon/library_music_24dp_E3E3E3_FILL0_wght400_GRAD0_opsz24.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    margin-right: 10px;
+    vertical-align: middle;
+}
+
+.renameSection {
+    grid-area: RenameSection;
+}
+
+.button {
+    padding: 0.3rem;
+    width: 2rem;
+    height: 2rem;
+    justify-self: center;
+    background-color: transparent;
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    border-radius: var(--contents-griditem-subitems-border-radius);
+}
+
+.renameButton {
+    background-image: url(../../../../assets/images/icons/playlistRenameIcon/edit_24dp_FFFFFF_FILL0_wght400_GRAD0_opsz24.png);
+}
+
+.inputSection {
+    display: grid;
+    grid-template-rows: auto auto;
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas: 'NewNameInput NewNameInput'
+        'CancelButton ApplyButton';
+    row-gap: 3px;
+    column-gap: 3px;
+}
+
+.newNameInput {
+    grid-area: NewNameInput;
+    width: 125px;
+    padding: var(--contents-griditem-subitems-padding);
+    background-color: rgba(255, 255, 255, 0.5);
+    border: none;
+    color: green;
+    border-radius: var(--contents-griditem-subitems-border-radius);
+}
+
+.cancelButton {
+    grid-area: CancelButton;
+    background-image: url(../../../../assets/images/icons/cancelIcon/close_24dp_E3E3E3_FILL0_wght400_GRAD0_opsz24.png);
+}
+
+.applyButton {
+    grid-area: ApplyButton;
+    background-image: url(../../../../assets/images/icons/saveIcon/check_24dp_E3E3E3_FILL0_wght400_GRAD0_opsz24.png);
+}
+
+
+.button:hover, .newNameInput:hover, .playlistName:hover {
+    cursor: pointer;
+    background-color: rgba(0,0,0,0.3);
+    filter: brightness(1.5);
+}
+
+.button:active, .newNameInput:active, .playlistName:active {
+    filter: brightness(0.80);
+}
