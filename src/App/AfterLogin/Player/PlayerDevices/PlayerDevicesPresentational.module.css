@@ -1,0 +1,90 @@
+.devicesButton {
+    grid-area: Devices;
+    background-image: url(../../../../assets/images/icons/devicesIcon/devices_24dp_FFFFFF_FILL0_wght400_GRAD0_opsz24.svg);
+}
+
+.otherButton {
+    width: 3rem;
+    height: 3rem;
+    background-color: transparent;
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    border-radius: var(--contents-griditem-subitems-border-radius);
+}
+
+.devicesSection {
+    grid-area: Devices;
+    display: grid;
+    grid-template-rows: auto auto auto;
+    grid-template-columns: auto;
+    grid-template-areas: "CloseAndReload"
+                         "Title"
+                         "MainDevices";
+    padding: var(--contents-griditem-subitems-padding);
+    row-gap: 10px;
+    background: var(--contents-griditem-subitems-background-image);
+    border-radius: var(--contents-griditem-subitems-border-radius);
+}
+
+
+
+.closeAndReload {
+    grid-area: CloseAndReload;
+    display: grid;
+    grid-template-rows: auto;
+    grid-template-columns: auto 1fr auto;
+    grid-template-areas: "Reload Nothing Close";
+    padding: var(--contents-griditem-subitems-padding);
+}
+
+.devicesInnerButton {
+    width: 1rem;
+    height: 1rem;
+    background-color: transparent;
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    border-radius: var(--contents-griditem-subitems-border-radius);
+}
+
+.closeButton {
+    grid-area: Close;
+    width: 25px;
+    height: 25px;
+    background-image: url(../../../../assets/images/icons/closeIcon/close_24dp_FFFFFF_FILL0_wght400_GRAD0_opsz24.svg);
+}
+
+.reloadButton {
+    grid-area: Reload;
+    width: 25px;
+    height: 25px;
+    background-image: url(../../../../assets/images/icons/refreshIcon/refresh_24dp_FFFFFF_FILL0_wght400_GRAD0_opsz24.svg);
+}
+
+.title {
+    grid-area: Title;
+    text-align: center;
+    font-size: 1.5rem;
+}
+
+.devicesList {
+    grid-area: MainDevices;
+    display: grid;
+    grid-auto-rows: auto ;
+    grid-auto-columns: auto;
+    grid-auto-flow: rows;
+    padding: var(--contents-griditem-subitems-padding);
+    row-gap: 0.2rem;
+    text-align: center;
+}
+
+.otherButton:hover, .devicesInnerButton:hover {
+    cursor: pointer;
+    background-color: rgba(0,0,0,0.3);
+    filter: brightness(1.5);
+}
+
+.otherButton:active, .devicesInnerButton:active {
+    filter: brightness(0.80);
+}

@@ -40,7 +40,7 @@ const redirectToAuth = async () => {
     client_id: CLIENT_ID,
     response_type: 'code',
     redirect_uri: REDIRECT_URI,
-    scope: 'user-read-private user-read-email playlist-modify-public playlist-modify-private playlist-read-private',
+    scope: 'user-read-private user-read-email playlist-modify-public playlist-modify-private playlist-read-private user-modify-playback-state user-read-playback-state user-read-recently-played user-read-currently-playing streaming',
     code_challenge_method: 'S256',
     code_challenge: codeChallenge,
   });
@@ -72,11 +72,12 @@ const getAccessToken = async (code) => {
       const data = await response.json();
       return data.access_token;
     };
-    throw new Error(`Api request failed in getAccessToken() function.\nApi responded error code ${response.status}.`); 
+    console.error(`Api request failed in getAccessToken() function.\nApi responded error code ${response.status}.\n\n`); 
   }
   catch(e) {
-    console.log(`There is an error in getAccessToken function call.\nApi request is rejected`);
-    throw new Error(e.message);
+    console.error(`There is an error in getAccessToken function call.\nApi request is rejected\n Error message is as follows: \n`);
+    console.error(e.message);
+    console.error(`\n\n`);
   }
 };
 

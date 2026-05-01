@@ -4,16 +4,17 @@
     max-height: 100%;
     padding:0px 10px 40px 10px;
     display: grid;
-    grid-template-rows: auto 1fr;
+    grid-template-rows: auto 1fr auto;
     grid-template-columns: 1fr;
     justify-items: stretch;
     grid-template-areas: 'PageName'
-                         'Content';
-    row-gap: 100px;
+                         'Content'
+                         'SpotifyLogo';
+    row-gap: 5vh;
 }
 
 .pageName {
-    padding-top: 150px;
+    padding-top: 5vh;
     grid-area: PageName;
 }
 
@@ -21,6 +22,24 @@
     text-align: center;
 }
 
+.spotifyLogo {
+    text-align: right;
+    grid-area: SpotifyLogo;
+    font-size: 1rem;
+    
+}
+
+.spotifyLogo div {
+    display: inline-block;
+    background-color: transparent;
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 170px;
+    height: 47px;
+    border-radius: var(--contents-griditem-subitems-border-radius);
+    background-image: url(../assets/images/spotifyLogo/Spotify_Full_Logo_RGB_White.png);
+}
 
 ::-webkit-scrollbar {
     background-color: rgba(0,0,0,0.2);

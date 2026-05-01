@@ -1,5 +1,6 @@
 .createPlaylistSection {
     grid-area: CreatePlaylist;
+    z-index: 2;
 }
 
 .button {

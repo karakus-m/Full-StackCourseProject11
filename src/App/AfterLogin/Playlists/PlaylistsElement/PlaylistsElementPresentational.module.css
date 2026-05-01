@@ -1,19 +1,46 @@
 .playlist {
     display: grid;
     grid-template-rows: auto;
-    grid-template-columns: 1fr auto;
-    grid-template-areas: 'PlaylistName RenameSection';
+    grid-template-columns: auto 1fr auto auto;
+    grid-template-areas: 'PlaylistImage PlaylistName TotalSongs buttonSection';
+    align-items: center;
     column-gap: 3px;
     padding: var(--contents-griditem-subitems-padding);
     background-image: var(--contents-griditem-subitems-background-image);
     border: none;
     color: var(--contents-griditem-subitems-color);
     border-radius: var(--contents-griditem-subitems-border-radius);
+    position: relative;
 }
 
+.totalSongs {
+    grid-area: TotalSongs;
+    text-align: right;
+    z-index: +2;
+}
+
+.playlistImageContainer {
+    grid-area: PlaylistImage;
+    padding: 3px;
+    display: grid;
+    grid-auto-rows: auto;
+    grid-auto-columns: auto;
+    grid-auto-flow: row;
+    justify-items: center; 
+    align-items: center;    
+    z-index: +2;
+}
+
+.playlistImage {
+    border-radius: 3px;
+    width: 4rem;
+    height: 4rem;
+    z-index: +2;
+}
 
 .playlistName {
     grid-area: PlaylistName;
+    z-index: +2;
     text-align: left;
     border-radius: var(--contents-griditem-subitems-border-radius);
 }
@@ -30,9 +57,18 @@
     vertical-align: middle;
 }
 
-.renameSection {
-    grid-area: RenameSection;
+.buttonSection {
+    z-index: +2;
+    grid-area: buttonSection;
+    display: grid;
+    grid-auto-rows: auto;
+    grid-auto-columns: auto;
+    grid-auto-flow: column;
+    justify-content: center;
+    row-gap: 1em;
+    padding: var(--contents-griditem-subitems-padding);
 }
+
 
 .button {
     padding: 0.3rem;
@@ -80,13 +116,43 @@
     background-image: url(../../../../assets/images/icons/saveIcon/check_24dp_E3E3E3_FILL0_wght400_GRAD0_opsz24.png);
 }
 
+.playButton {
+    background-image: url(../../../../assets/images/icons/playIcon/play_arrow_24dp_FFFFFF_FILL0_wght400_GRAD0_opsz24.png);
+}
 
-.button:hover, .newNameInput:hover, .playlistName:hover {
+.pauseButton {
+    background-image: url(../../../../assets/images/icons/pauseIcon/pause_24dp_FFFFFF_FILL0_wght400_GRAD0_opsz24.png);
+}
+
+.button:hover, .newNameInput:hover, .playlistImageContainer:hover {
     cursor: pointer;
     background-color: rgba(0,0,0,0.3);
     filter: brightness(1.5);
 }
 
-.button:active, .newNameInput:active, .playlistName:active {
+.button:active, .newNameInput:active, .playlistImageContainer:active {
     filter: brightness(0.80);
 }
+
+.playlistRunning::after, .playlistPaused::after {
+    content: '';
+    position: absolute;
+    z-index: +1;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    border-radius: inherit;
+    opacity: 0.69;
+    background-position: center;
+    background-size: cover;
+}
+
+.playlistRunning::after {
+    background-image: url("../../../../assets/images/backgroundImage/Render\ Digital\ Art\ GIF\ by\ time.gif");
+}
+
+.playlistPaused::after {
+    background-image: url("../../../../assets/images/backgroundImage/Render\ Digital\ Art\ GIF\ by\ time\ paused.jpg");
+}
+
+

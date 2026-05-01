@@ -18,6 +18,8 @@
 .title {
     grid-area: Title;
     text-align: center;
+    position: relative;
+    z-index: 3;
 }
 
 .mainTracklist {
@@ -33,3 +35,40 @@
     row-gap: 10px;
     padding: 5px;
 }
+
+.tracklistTrackRunning::after, .tracklistTrackPaused::after {
+    content: '';
+    position: absolute;
+    right: 0;
+    margin-left: 1rem;
+    z-index: +1;
+    width: 30%;
+    height: 100%;
+    border-radius: 1em;
+    opacity: 1;
+    background-position: center;
+    background-size: cover;
+}
+
+.tracklistTrackRunning::before, .tracklistTrackPaused::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    margin-right: 1rem;
+    z-index: +1;
+    width: 30%;
+    height: 100%;
+    border-radius: 1em;
+    opacity: 1;
+    background-position: center;
+    background-size: cover;
+}
+
+.tracklistTrackRunning::after, .tracklistTrackRunning::before {
+    background-image: url("../../../assets/images/backgroundImage/PalmTreesMiamiStickerbyMarcelKatzTheArtPlug-ezgif.com-instagif.gif") ;
+}
+
+.tracklistTrackPaused::after, .tracklistTrackPaused::before {
+    background-image: url("../../../assets/images/backgroundImage/PalmTreesMiamiStickerbyMarcelKatzTheArtPlug-ezgif.com-instagifpaused.gif") ;
+}
+

@@ -13,8 +13,11 @@ function Search ({onSearch, token}) {
                 name: track.name,
                 uri: track.uri,
                 id: track.id,
-                artists: track.artists.map(artist => artist.name),
-                album: track.album.name
+                artists: track.artists,
+                album: track.album.name,
+                albumLink: track.album.external_urls.spotify,
+                image: track.album.images[0].url,
+                link: track.external_urls.spotify
             }));
             onSearch(formattedResults);
         });

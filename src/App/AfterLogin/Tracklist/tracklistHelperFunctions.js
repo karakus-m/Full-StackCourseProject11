@@ -13,10 +13,10 @@ async function getTracklist(token, selectedPlaylistId) {
             const responseBody = await response.json();
             return responseBody;
         }
-        throw new Error(`Api request failed in getTracklist function.\nApi responded error code ${response.status}.`);
+        console.error(`Api request failed in getTracklist function.\nApi responded error code ${response.status}.\n\n`);
     } catch (e) {
-        console.log(`There is an error in getTracklist function call.\nApi request is rejected`);
-        throw new Error(e.message);   
+        console.error(`There is an error in getTracklist function call.\nApi request is rejected\n Error message is as follows: \n`);
+        console.error(e.message,`\n\n`);   
     }
 };
 

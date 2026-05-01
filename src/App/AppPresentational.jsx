@@ -8,6 +8,7 @@ function AppPresentational({signedInJammming, token, onSignIn, onTokenReceiving}
     return (
         <div className = {styles.app}>
           <h1 className={styles.pageName}>Jammming</h1>
+          <p className={`${styles.spotifyLogo}`}><div></div>Data provided by Spotify</p>
           {
             signedInJammming ? 
               <AfterLogin token={token} /> : 

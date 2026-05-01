@@ -36,6 +36,11 @@ html:disabled {
   opacity: 0.6;
 }
 
+a {
+  color:white;
+  text-decoration: none;
+}
+
 /*Default button look*/
 button {
   border-style: solid;
@@ -76,3 +81,7 @@ body  {
   background-position: no-repeat;
 }
 
+.blocked {
+    cursor: not-allowed !important; /* Visual hint that the button is blocked */
+    opacity: 0.5;        /* Visual hint that the button is inactive */
+}

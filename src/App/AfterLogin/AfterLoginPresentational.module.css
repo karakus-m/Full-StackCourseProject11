@@ -2,10 +2,12 @@
     grid-area: Content;
     min-height: 100%;
     display: grid;
-    grid-template-rows: 1fr;
+    grid-template-rows: auto 1fr;
     grid-template-columns: 1fr 1fr 1fr;
+    row-gap: 25px;
     column-gap: 25px;
-    grid-template-areas: 'Search Playlists Tracklist';
+    grid-template-areas:'Player Player Player' 
+                        'Search Playlists Tracklist';
     --contents-griditem-padding: 15px 15px;
     --contents-griditem-border-radius: 25px;
     --contents-griditem-background-image: linear-gradient(to bottom, rgba(12, 12, 12, 0.5), rgba(53, 53, 53, 0.5));

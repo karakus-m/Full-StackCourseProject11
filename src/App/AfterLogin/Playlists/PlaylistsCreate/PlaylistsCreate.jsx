@@ -3,21 +3,22 @@ import { createPlaylist } from './playlistsCreateHelperFunctions';
 import PlaylistsCreatePresentational from './PlaylistsCreatePresentational';
 
 
-function PlaylistsCreate({ token, onSaveClick }) {
+function PlaylistsCreate({ token, onSaveClick, clickedCreate, onClickedCreate, onBlockingStateChange, blocking }) {
     //States
-    const [clickedCreate, setClickedCreate] = useState(false);
     const [newPlaylistName, setNewPlaylistName] = useState('');
 
     //Click event handler for create a new playlist button
     const handleCreatePlaylistClick = () => {
-        setClickedCreate(true);
+        onClickedCreate(true);
     };
     //Click event handler for save playlist button
     const handleSavePlaylistClick = () => {
         if (newPlaylistName !== '') {
+            onBlockingStateChange(true);
+            setTimeout(()=>{onBlockingStateChange(false)}, 1000);
             createPlaylist(token, newPlaylistName).then((responseBody) => {
                 onSaveClick();
-                setClickedCreate(false);
+                onClickedCreate(false);
                 setNewPlaylistName('');
             });
         };
@@ -25,7 +26,7 @@ function PlaylistsCreate({ token, onSaveClick }) {
     //Click event handler for cancel button
     const handleCancelPlaylistClick = () => {
         setNewPlaylistName('');
-        setClickedCreate(false);
+        onClickedCreate(false);
     };
     //Change event handler for new playlist name input element
     const handleNewPlaylistNameChange = (e) => {
@@ -37,7 +38,8 @@ function PlaylistsCreate({ token, onSaveClick }) {
         handleNewPlaylistNameChange={handleNewPlaylistNameChange}
         handleSavePlaylistClick={handleSavePlaylistClick}
         handleCancelPlaylistClick={handleCancelPlaylistClick}
-        handleCreatePlaylistClick={handleCreatePlaylistClick} />
+        handleCreatePlaylistClick={handleCreatePlaylistClick}
+        blocking={blocking} />
 };
 
 export default PlaylistsCreate 

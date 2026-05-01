@@ -19,10 +19,10 @@ async function createPlaylist(token, playlistName) {
             const responseBody = await  response.json();
             return responseBody
         }
-        throw new Error(`Api request failed in createPlaylist function.\nApi responded error code ${response.status}.`); 
+        console.error(`Api request failed in createPlaylist function.\nApi responded error code ${response.status}.\n\n`); 
     } catch(e) {
-        console.log(`There is an error in createPlaylist function call.\nApi request is rejected`);
-        throw new Error(e.message);
+        console.error(`There is an error in createPlaylist function call.\nApi request is rejected\n Error message is as follows: \n`);
+        console.error(e.message, `\n\n`);
     }
 };
 

@@ -1,0 +1,169 @@
+.playerContainer {
+    grid-area: Player;
+    min-height: 100%;
+    max-height: 100%;
+    display: grid;
+    grid-template-rows: auto auto 1fr;
+    grid-template-columns: auto 1fr auto;
+    gap: 25px;
+    grid-template-areas: 'SongImage SongDetails  ExtraButtons'
+                         'SongImage ProgressBar  ExtraButtons'
+                         'SongImage MainButtons  ExtraButtons';
+    background-image: var(--contents-griditem-background-image);
+    padding: var(--contents-griditem-padding);
+    border-radius: var(--contents-griditem-border-radius);
+}
+
+.songImage {
+    border-radius: 3px;
+    width: 20rem;
+    height: 20rem;
+    
+}
+
+.songImageContainer {
+    grid-area: SongImage;
+    z-index: 2;
+}
+
+.songDetailsSection {
+    grid-area: SongDetails;
+    z-index: 2;
+    text-align: center;
+    line-height: 3.0rem;
+    display: grid;
+    grid-template-columns: auto ;
+    grid-template-rows: auto auto;
+    grid-template-areas: "SongName"
+                         "Artists";
+    padding: var(--contents-griditem-subitems-padding);
+    justify-items: center;
+    gap: 0 25px 0 25px;
+}
+
+.playingSongName {
+    grid-area: SongName;
+    font-size: 2rem;
+}
+
+.playingSongArtist {
+    grid-area: Artists;
+    font-size: 1.5rem;
+}
+
+.mainButtons {
+    grid-area: MainButtons;
+    z-index: 2;
+    display: grid;
+    grid-template-columns: auto auto auto;
+    grid-template-rows: auto;
+    grid-template-areas: "PreviousSong PausePlay NextSong";
+    padding: var(--contents-griditem-subitems-padding);
+    justify-items: center;
+    gap: 0 25px 0 25px;
+}
+
+.extraButtons {
+    grid-area: ExtraButtons;
+    z-index: 2;
+    display: grid;
+    grid-template-rows: auto auto auto;
+    grid-template-columns: auto;
+    grid-template-areas: "Volume"
+                         "Shuffle"
+                         "Repeat"
+                         "Devices";
+    padding: var(--contents-griditem-subitems-padding);
+    align-items: center;
+    justify-items: center;
+    gap: 25px;
+}
+
+.previousSongButton {
+    grid-area: PreviousSong;
+    z-index: 2;
+    background-image: url(../../../assets/images/icons/previousIcon/skip_previous_24dp_FFFFFF_FILL0_wght400_GRAD0_opsz24.svg);
+}
+
+.nextSongButton {
+    grid-area: NextSong;
+    z-index: 2;
+    background-image: url(../../../assets/images/icons/nextIcon/skip_next_24dp_FFFFFF_FILL0_wght400_GRAD0_opsz24.svg);
+}
+
+.pausePlayButton {
+    grid-area: PausePlay;
+}
+
+.pauseButton {
+    background-image: url(../../../assets/images/icons/pauseIcon/pause_24dp_FFFFFF_FILL0_wght400_GRAD0_opsz24.svg);
+}
+
+.resumeButton {
+    background-image: url(../../../assets/images/icons/playIcon/play_arrow_24dp_FFFFFF_FILL0_wght400_GRAD0_opsz24.svg);
+}
+
+.commonShuffleButton {
+    grid-area: Shuffle;
+    z-index: 2;
+
+}
+
+.commonRepeatButton {
+    grid-area: Repeat;
+    z-index: 2;
+}
+
+.regularShuffleButton {
+    background-image: url(../../../assets/images/icons/ShuffleOnIcon/shuffle_on_24dp_FFFFFF_FILL0_wght400_GRAD0_opsz24.svg);
+}
+
+.smartShuffleButton {
+    background-image: url(../../../assets/images/icons/ShuffleOnIcon/shuffle_on_24dp_FFFFFF_FILL0_wght400_GRAD0_opsz24.svg);
+}
+
+.shuffleOffButton {
+    background-image: url(../../../assets/images/icons/shuffleOffIcon/shuffle_24dp_FFFFFF_FILL0_wght400_GRAD0_opsz24.svg) 
+}
+
+.repeatOffButton{
+    background-image: url(../../../assets/images/icons/repeatOffIcon/repeat_24dp_FFFFFF_FILL0_wght400_GRAD0_opsz24.svg);
+}
+
+.repeatTrackButton{
+    background-image: url(../../../assets/images/icons/repeatPlaylistOnIcon/repeat_one_on_24dp_FFFFFF_FILL0_wght400_GRAD0_opsz24.svg);
+}
+
+.repeatContextButton{
+    background-image: url(../../../assets/images/icons/repeatTrackOnIcon/repeat_on_24dp_FFFFFF_FILL0_wght400_GRAD0_opsz24.svg);
+}
+
+.togglingButton{
+    width: 5rem;
+    height: 5rem;
+    background-color: transparent;
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    border-radius: var(--contents-griditem-subitems-border-radius);
+}
+
+.otherButton {
+    width: 3rem;
+    height: 3rem;
+    background-color: transparent;
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    border-radius: var(--contents-griditem-subitems-border-radius);
+}
+
+.togglingButton:hover, .otherButton:hover{
+    cursor: pointer;
+    background-color: rgba(0,0,0,0.3);
+    filter: brightness(1.5);
+}
+
+.togglingButton:active, .otherButton:active{
+    filter: brightness(0.80);
+}

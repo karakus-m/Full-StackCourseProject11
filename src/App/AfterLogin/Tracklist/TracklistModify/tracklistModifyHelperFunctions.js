@@ -1,4 +1,3 @@
-
 async function removeTracks(token, playlistId, originalTracklist, modifiedTracklist) {
     
     // Compares original tracklist and modified tracklist, returns an array of tracks removed from the original traclist.
@@ -34,10 +33,10 @@ async function removeTracks(token, playlistId, originalTracklist, modifiedTrackl
             if(response.ok) {
                 return null;
             }
-            throw new Error(`Api request failed in removeTracks function.\nApi responded error code ${response. status}.`);
+            console.error(`Api request failed in removeTracks function.\nApi responded error code ${response. status}.\n\n`);
         } catch (e) {
-            console.log(`There is an error in removeTracks function call.\nApi request is rejected`);
-            throw new Error(e.message);   
+            console.error(`There is an error in removeTracks function call.\nApi request is rejected\n Error message is as follows: \n`);
+            console.error(e.message,`\n\n`);   
         }
     } else {
         console.log('No tracks removed from the playlist');
@@ -80,10 +79,10 @@ async function addTracks(token, playlistId, originalTracklist, modifiedTracklist
             if(response.ok) {
                 return null;
             }
-            throw new Error(`Api request failed in addTracks function.\nApi responded error code ${response.    status}.`);
+            console.error(`Api request failed in addTracks function.\nApi responded error code ${response.status}.\n\n`);
         } catch (e) {
-            console.log(`There is an error in addTracks function call.\nApi request is rejected`);
-            throw new Error(e.message);   
+            console.error(`There is an error in addTracks function call.\nApi request is rejected\n Error message is as follows: \n`);
+            console.error(e.message, `\n\n`);   
         }
     } else {
         console.log('No tracks added to the playlist');

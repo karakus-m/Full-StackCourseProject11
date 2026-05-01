@@ -1,0 +1,45 @@
+.device{
+    padding: var(--contents-griditem-subitems-padding);
+    border-radius: var(--contents-griditem-subitems-border-radius);
+}
+
+.device:hover{
+    cursor: pointer;
+    background-color: rgba(0,0,0,0.3);
+    filter: brightness(1.5);
+}
+
+.device:active{
+    filter: brightness(0.80);
+}
+
+.currentDevice{
+    position: relative;
+    z-index: +2;
+}
+.currentDevice p {
+    z-index: +2;
+}
+
+.currentDevice::after, .currentDevice::after {
+    content: '';
+    position: absolute;
+    top:0;
+    left:0;
+    z-index: -1;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    border-radius: inherit;
+    opacity: 0.69;
+    background-position: center;
+    background-size: cover;
+}
+
+.currentDevicePlaying::after{
+    background-image: url("../../../../../assets/images/backgroundImage/Render\ Digital\ Art\ GIF\ by\ time.gif") ;
+}
+
+.currentDevicePaused::after{
+    background-image: url("../../../../../assets/images/backgroundImage/Render\ Digital\ Art\ GIF\ by\ time\ paused.jpg") ;
+}
